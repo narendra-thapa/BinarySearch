@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
     BOOL found = NO;
     NSArray *numbers = @[@1,@2,@3,@4,@6,@7,@8,@9,@10];                              // input array of integers
     NSUInteger count = [numbers count];                                             // array element count
-    int num = 5;                                                                    // search item
+    int num = 10;                                                                    // search item
     
     int lowerlimit = 0;
     int upperlimit = (int)count;
@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
         if (num < arrayvalue.intValue){
             /// search again
             NSLog(@"positional value %d", arrayvalue.intValue);
-            NSLog(@"Less Than");
+            NSLog(@"Search value is Less Than");
             
             lowerlimit = upperold;
             upperlimit = midNumber;
@@ -49,7 +49,7 @@ int main(int argc, const char * argv[]) {
         } else if (num > arrayvalue.intValue) {
             /// search again
             NSLog(@"positional value %d", arrayvalue.intValue);
-            NSLog(@"Greater Than");
+            NSLog(@"Search value is Greater Than");
             
             lowerlimit = midNumber;
             upperlimit = lowerold;
@@ -67,14 +67,7 @@ int main(int argc, const char * argv[]) {
             found = YES;
             NSLog(@"Found value %d at position %d ", arrayvalue.intValue, midNumber);
         }
-//        if ((midNumber == 0) || (midNumber == ((int)count) - 1)){
-//            NSLog(@"Value not present in array");
-//            found = YES;
-//        }
     }
-//    if (!found) {
-//        NSLog(@"Value not present in array");
-//    }
     return 0;
 
 }
